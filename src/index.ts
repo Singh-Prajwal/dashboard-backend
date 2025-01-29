@@ -77,7 +77,7 @@ const loadCSVData = (
 
 // API endpoint
 app.get("/api/inventory", async (req: Request, res: Response) => {
-  const filters = req.body as Partial<InventoryItem>;
+  const filters = req.query as Partial<InventoryItem>;
   console.log("filters:", filters);
   try {
     const data = await loadCSVData(filters);
